@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emma &amp; Oliver | Save the Date</title>
+
+<!-- ============ OG / TWITTER (DigiWed standard) ============ -->
+<meta property="og:title" content="Emma & Oliver | Save the Date">
+<meta property="og:description" content="14 June 2027 · Kensington Gardens, London — You are lovingly invited.">
+<!-- OG IMAGE: replace with the real Cloudinary 1200x630 thumb (c_fill,g_faces); change the URL (new filename/version) when updating so WhatsApp re-fetches -->
+<meta property="og:image" content="https://res.cloudinary.com/dormnrhdf/image/upload/f_auto,q_auto,w_1200,h_630,c_fill/digiwed-invitations/emma-oliver/og-thumb.jpg">
+<meta property="og:url" content="https://digiwed161-sys.github.io/Emmawedsoliver/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============ Firebase COMPAT SDK (loaded BEFORE main script) ============ -->
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+
+<style>
+  html, body { margin:0; padding:0; background:#fdf2f3; }
+  body { overflow-x:hidden; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  ::selection { background:rgba(200,148,152,.30); }
+  @keyframes eoChev { 0%,100%{ transform:translateY(0); opacity:.7 } 50%{ transform:translateY(5px); opacity:1 } }
+  @keyframes eoPulse { 0%{ transform:scale(1); opacity:.55 } 100%{ transform:scale(2.2); opacity:0 } }
+  @keyframes eoShimmer { 0%{ background-position:200% 0 } 100%{ background-position:-200% 0 } }
+  .eo-photo-ph {
+    width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(110deg,#f2ebdc 0%,#f7f0e3 25%,#efe6d4 50%,#f7f0e3 75%,#f2ebdc 100%);
+    background-size:200% 100%; animation:eoShimmer 3.2s ease infinite;
+  }
+  .eo-photo-ph span {
+    font-family:'Cinzel',serif; font-size:10px; letter-spacing:.34em; color:#b9a98f;
+  }
+</style>
+</head>
+<body>
+
+<div aria-hidden="true" style="position:fixed; inset:0; z-index:0; pointer-events:none; background:radial-gradient(58% 48% at 14% 2%, rgba(232,207,208,.60), transparent 70%), radial-gradient(44% 38% at 92% 12%, rgba(200,148,152,.26), transparent 70%), radial-gradient(72% 60% at 86% 100%, rgba(232,207,208,.50), transparent 72%), radial-gradient(50% 40% at 8% 88%, rgba(212,196,178,.28), transparent 72%), #fdf2f3"></div>
+
+<div style="position:relative; z-index:1; font-family:'Cormorant Garamond',serif; color:#2a2420; max-width:680px; margin:0 auto">
+
+  <!-- ============ HERO ============ -->
+  <section data-screen-label="Hero" style="min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:54px 24px 86px; position:relative; overflow:hidden">
+    <span data-drift="1" style="position:absolute; top:-30px; left:10%; width:16px; height:22px; background:linear-gradient(145deg,#f3dcdd 8%,#e8cfd0 45%,#c89498 100%); border-radius:50% 0 50% 50%; box-shadow:inset 1px -1px 2px rgba(166,106,110,.25); opacity:.55"></span>
+    <span data-drift="2" style="position:absolute; top:-30px; left:26%; width:11px; height:16px; background:linear-gradient(145deg,#f6e2e3 8%,#f0d8d9 45%,#cf9aa0 100%); border-radius:50% 0 50% 50%; box-shadow:inset 1px -1px 2px rgba(166,106,110,.22); opacity:.46"></span>
+    <span data-drift="3" style="position:absolute; top:-30px; left:44%; width:15px; height:20px; background:linear-gradient(145deg,#f3dcdd 8%,#e8cfd0 45%,#c0888d 100%); border-radius:50% 0 50% 50%; box-shadow:inset 1px -1px 2px rgba(166,106,110,.25); opacity:.5"></span>
+    <span data-drift="4" style="position:absolute; top:-30px; left:62%; width:10px; height:15px; background:linear-gradient(145deg,#f0d8d9 8%,#cf9aa0 50%,#a66a6e 100%); border-radius:50% 0 50% 50%; box-shadow:inset 1px -1px 2px rgba(166,106,110,.28); opacity:.44"></span>
+    <span data-drift="5" style="position:absolute; top:-30px; left:78%; width:14px; height:19px; background:linear-gradient(145deg,#f3dcdd 8%,#e8cfd0 45%,#c89498 100%); border-radius:50% 0 50% 50%; box-shadow:inset 1px -1px 2px rgba(166,106,110,.25); opacity:.5"></span>
+    <span data-drift="6" style="position:absolute; top:-30px; left:90%; width:12px; height:17px; background:linear-gradient(145deg,#f6e2e3 8%,#f0d8d9 45%,#cf9aa0 100%); border-radius:50% 0 50% 50%; box-shadow:inset 1px -1px 2px rgba(166,106,110,.22); opacity:.44"></span>
+    <span data-drift="7" style="position:absolute; top:-30px; left:34%; width:9px; height:13px; background:linear-gradient(145deg,#f0d8d9 8%,#c89498 55%,#b27a7e 100%); border-radius:50% 0 50% 50%; box-shadow:inset 1px -1px 2px rgba(166,106,110,.28); opacity:.42"></span>
+
+    <div data-fx="rise" data-fx-delay="60" style="display:flex; flex-direction:column; align-items:center; gap:7px; margin-bottom:auto; padding-top:6px">
+      <span style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.42em; color:#a66a6e; font-weight:500">SCROLL TO DISCOVER</span>
+      <svg viewBox="0 0 24 14" style="width:20px; height:12px; animation:eoChev 1.8s ease-in-out infinite" aria-hidden="true"><path d="M3 3 L12 11 L21 3" fill="none" stroke="#c89498" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+
+    <h1 data-fx="rise" data-fx-delay="200" style="margin:0; font-family:'Italiana',serif; font-weight:400; font-size:clamp(50px,15vw,104px); line-height:1; color:#2a2420">Emma <span style="font-family:'Playfair Display',serif; font-style:italic; color:#a66a6e; font-size:.58em; vertical-align:.06em">&amp;</span> Oliver</h1>
+    <div data-fx="rise" data-fx-delay="360" style="font-family:'Playfair Display',serif; font-style:italic; font-weight:500; font-size:clamp(21px,5.4vw,30px); color:#564d44; margin:16px 0 24px">are saving the date</div>
+
+    <div data-fx="rise" data-fx-delay="380" style="display:flex; align-items:flex-start; justify-content:center; gap:clamp(6px,2.5vw,18px); line-height:.9">
+      <div style="text-align:center">
+        <span style="display:block; font-family:'Italiana',serif; font-size:clamp(66px,21vw,128px); color:#2a2420">14</span>
+        <span style="display:block; font-family:'Cinzel',serif; font-size:9px; letter-spacing:.3em; color:#9c9388; margin-top:10px">DAY</span>
+      </div>
+      <span style="font-family:'Italiana',serif; font-size:clamp(66px,21vw,128px); color:#e8cfd0; line-height:.9">·</span>
+      <div style="text-align:center">
+        <span style="display:block; font-family:'Italiana',serif; font-size:clamp(66px,21vw,128px); color:#a66a6e">06</span>
+        <span style="display:block; font-family:'Cinzel',serif; font-size:9px; letter-spacing:.3em; color:#9c9388; margin-top:10px">MONTH</span>
+      </div>
+      <span style="font-family:'Italiana',serif; font-size:clamp(66px,21vw,128px); color:#e8cfd0; line-height:.9">·</span>
+      <div style="text-align:center">
+        <span style="display:block; font-family:'Italiana',serif; font-size:clamp(66px,21vw,128px); color:#cf9aa0">27</span>
+        <span style="display:block; font-family:'Cinzel',serif; font-size:9px; letter-spacing:.3em; color:#9c9388; margin-top:10px">YEAR</span>
+      </div>
+    </div>
+
+    <!-- countdown / count-up -->
+    <div data-fx="rise" data-fx-delay="520" style="margin-top:30px; display:flex; flex-direction:column; align-items:center; gap:14px">
+      <span id="cdHeading" style="font-family:'Cinzel',serif; font-size:9px; letter-spacing:.42em; color:#a66a6e; font-weight:500">COUNTING DOWN</span>
+      <div style="display:flex; align-items:center; justify-content:center; gap:18px">
+        <div style="text-align:center; min-width:50px">
+          <span id="cdDays" style="display:block; font-family:'Italiana',serif; font-size:26px; color:#2a2420">—</span>
+          <span style="display:block; font-family:'Cinzel',serif; font-size:8px; letter-spacing:.26em; color:#9c9388; margin-top:5px">DAYS</span>
+        </div>
+        <span style="width:4px; height:4px; border-radius:50%; background:#c89498; display:block; margin-bottom:14px"></span>
+        <div style="text-align:center; min-width:50px">
+          <span id="cdHours" style="display:block; font-family:'Italiana',serif; font-size:26px; color:#2a2420">—</span>
+          <span style="display:block; font-family:'Cinzel',serif; font-size:8px; letter-spacing:.26em; color:#9c9388; margin-top:5px">HOURS</span>
+        </div>
+        <span style="width:4px; height:4px; border-radius:50%; background:#c89498; display:block; margin-bottom:14px"></span>
+        <div style="text-align:center; min-width:50px">
+          <span id="cdMins" style="display:block; font-family:'Italiana',serif; font-size:26px; color:#2a2420">—</span>
+          <span style="display:block; font-family:'Cinzel',serif; font-size:8px; letter-spacing:.26em; color:#9c9388; margin-top:5px">MINUTES</span>
+        </div>
+      </div>
+    </div>
+
+    <p data-fx="rise" data-fx-delay="660" style="font-style:italic; font-size:clamp(16px,4.4vw,19px); color:#564d44; margin:30px 0 auto; max-width:380px; line-height:1.6">Please join us for an afternoon of love, laughter, and blooms.</p>
+  </section>
+
+  <!-- ============ THE VENUE ============ -->
+  <section data-screen-label="The Venue" style="padding:24px 22px 64px">
+    <div data-reveal="up" style="text-align:center; margin-bottom:26px">
+      <h2 style="font-family:'Playfair Display',serif; font-style:italic; font-weight:500; font-size:clamp(34px,9vw,50px); color:#2a2420; margin:0 0 8px">The Venue</h2>
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.36em; color:#a66a6e; font-weight:500">WHERE TO GO</div>
+    </div>
+    <div data-reveal="up" style="background:#fffdfb; border:1px solid rgba(200,148,152,.22); border-radius:8px; overflow:hidden; box-shadow:0 14px 40px rgba(166,106,110,.10)">
+      <div style="position:relative; aspect-ratio:16/10; background:#f2ebdc">
+        <!-- PHOTO SLOT: replace with <img loading="lazy" src="<CLOUDINARY URL with f_auto,q_auto>" style="width:100%;height:100%;object-fit:cover"> -->
+        <div class="eo-photo-ph"><span>PHOTO</span></div>
+        <div style="position:absolute; left:50%; bottom:-15px; transform:translateX(-50%); display:flex; align-items:center; gap:6px; background:linear-gradient(135deg,#c89498,#a66a6e); color:#fff; padding:7px 16px; border-radius:999px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:.18em; box-shadow:0 8px 20px rgba(166,106,110,.32); white-space:nowrap">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2" stroke-linecap="round"></path></svg>
+          3:00 PM
+        </div>
+      </div>
+      <div style="text-align:center; padding:30px 24px 26px">
+        <div style="font-family:'Cinzel',serif; font-size:13px; letter-spacing:.26em; color:#2a2420; font-weight:500; margin-bottom:8px">THE GARDEN PAVILION</div>
+        <div style="font-style:italic; font-size:17px; color:#564d44; margin-bottom:20px">Kensington Gardens, London W2 2UH</div>
+        <a href="https://maps.google.com/?q=Kensington+Gardens+London+W2+2UH" target="_blank" style="display:inline-flex; align-items:center; gap:8px; padding:13px 26px; background:linear-gradient(135deg,#c89498,#a66a6e); color:#fff; text-decoration:none; border-radius:999px; font-family:'Cinzel',serif; font-size:10.5px; letter-spacing:.2em; box-shadow:0 8px 22px rgba(166,106,110,.26)">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fff" stroke-width="1.7"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"></path><circle cx="12" cy="10" r="2.4"></circle></svg>
+          OPEN IN MAPS
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MOMENTS / GALLERY ============ -->
+  <section data-screen-label="Moments" style="padding:8px 22px 70px">
+    <div data-reveal="up" style="text-align:center; margin-bottom:30px">
+      <h2 style="font-family:'Playfair Display',serif; font-style:italic; font-weight:500; font-size:clamp(34px,9vw,50px); color:#2a2420; margin:0 0 8px">Us, lately</h2>
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.36em; color:#a66a6e; font-weight:500">A FEW OF OUR FAVOURITES</div>
+    </div>
+    <div data-reveal="up" style="position:relative; width:min(86vw,300px); height:392px; margin:0 auto">
+      <div id="eoGalStack" style="position:absolute; inset:0; cursor:pointer">
+        <div id="eoCard0">
+          <div style="background:#fffdfb; border:1px solid rgba(200,148,152,.16); border-radius:6px; padding:11px 11px 42px; box-shadow:0 18px 38px rgba(166,106,110,.20); width:100%; height:100%; box-sizing:border-box">
+            <div style="height:calc(100% - 8px); border-radius:3px; overflow:hidden; background:#f2ebdc">
+              <!-- PHOTO SLOT: replace with <img loading="lazy" src="<CLOUDINARY URL with f_auto,q_auto>" style="width:100%;height:100%;object-fit:cover"> -->
+              <div class="eo-photo-ph"><span>PHOTO</span></div>
+            </div>
+          </div>
+          <div style="position:absolute; left:0; right:0; bottom:13px; text-align:center; font-family:'Playfair Display',serif; font-style:italic; font-size:15px; color:#a66a6e">the proposal</div>
+        </div>
+        <div id="eoCard1">
+          <div style="background:#fffdfb; border:1px solid rgba(200,148,152,.16); border-radius:6px; padding:11px 11px 42px; box-shadow:0 18px 38px rgba(166,106,110,.20); width:100%; height:100%; box-sizing:border-box">
+            <div style="height:calc(100% - 8px); border-radius:3px; overflow:hidden; background:#f2ebdc">
+              <!-- PHOTO SLOT: replace with <img loading="lazy" src="<CLOUDINARY URL with f_auto,q_auto>" style="width:100%;height:100%;object-fit:cover"> -->
+              <div class="eo-photo-ph"><span>PHOTO</span></div>
+            </div>
+          </div>
+          <div style="position:absolute; left:0; right:0; bottom:13px; text-align:center; font-family:'Playfair Display',serif; font-style:italic; font-size:15px; color:#a66a6e">first dance</div>
+        </div>
+        <div id="eoCard2">
+          <div style="background:#fffdfb; border:1px solid rgba(200,148,152,.16); border-radius:6px; padding:11px 11px 42px; box-shadow:0 18px 38px rgba(166,106,110,.20); width:100%; height:100%; box-sizing:border-box">
+            <div style="height:calc(100% - 8px); border-radius:3px; overflow:hidden; background:#f2ebdc">
+              <!-- PHOTO SLOT: replace with <img loading="lazy" src="<CLOUDINARY URL with f_auto,q_auto>" style="width:100%;height:100%;object-fit:cover"> -->
+              <div class="eo-photo-ph"><span>PHOTO</span></div>
+            </div>
+          </div>
+          <div style="position:absolute; left:0; right:0; bottom:13px; text-align:center; font-family:'Playfair Display',serif; font-style:italic; font-size:15px; color:#a66a6e">that summer</div>
+        </div>
+        <div id="eoCard3">
+          <div style="background:#fffdfb; border:1px solid rgba(200,148,152,.16); border-radius:6px; padding:11px 11px 42px; box-shadow:0 18px 38px rgba(166,106,110,.20); width:100%; height:100%; box-sizing:border-box">
+            <div style="height:calc(100% - 8px); border-radius:3px; overflow:hidden; background:#f2ebdc">
+              <!-- PHOTO SLOT: replace with <img loading="lazy" src="<CLOUDINARY URL with f_auto,q_auto>" style="width:100%;height:100%;object-fit:cover"> -->
+              <div class="eo-photo-ph"><span>PHOTO</span></div>
+            </div>
+          </div>
+          <div style="position:absolute; left:0; right:0; bottom:13px; text-align:center; font-family:'Playfair Display',serif; font-style:italic; font-size:15px; color:#a66a6e">home</div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal="up" style="display:flex; align-items:center; justify-content:center; gap:16px; margin-top:24px">
+      <button id="eoGalPrev" aria-label="Previous" style="width:34px; height:34px; border-radius:50%; border:1px solid rgba(200,148,152,.4); background:#fffdfb; color:#a66a6e; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center">‹</button>
+      <div style="display:flex; gap:0">
+        <span id="eoDot0"></span>
+        <span id="eoDot1"></span>
+        <span id="eoDot2"></span>
+        <span id="eoDot3"></span>
+      </div>
+      <button id="eoGalNext" aria-label="Next" style="width:34px; height:34px; border-radius:50%; border:1px solid rgba(200,148,152,.4); background:#fffdfb; color:#a66a6e; cursor:pointer; font-size:15px; display:flex; align-items:center; justify-content:center">›</button>
+    </div>
+    <div data-reveal="up" style="text-align:center; font-family:'Cinzel',serif; font-size:9px; letter-spacing:.3em; color:#9c9388; margin-top:14px"><span id="eoGalCounter">1 / 4</span> · TAP TO BROWSE</div>
+  </section>
+
+  <!-- ============ DRESS CODE ============ -->
+  <section data-screen-label="Dress Code" style="padding:8px 22px 70px">
+    <div data-reveal="up" style="background:#fffdfb; border:1px solid rgba(200,148,152,.22); border-radius:8px; padding:42px 26px 38px; text-align:center; box-shadow:0 14px 40px rgba(166,106,110,.08)">
+      <h2 style="font-family:'Playfair Display',serif; font-style:italic; font-weight:500; font-size:clamp(32px,8.5vw,46px); color:#2a2420; margin:0 0 8px">Dress Code</h2>
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.36em; color:#a66a6e; font-weight:500; margin-bottom:18px">ATTIRE</div>
+      <p style="font-style:italic; font-size:17px; color:#564d44; line-height:1.7; margin:0 auto 30px; max-width:420px">Garden party chic — soft florals, pastels, and tasteful prints are warmly welcomed.</p>
+      <div style="display:flex; align-items:stretch; justify-content:center; gap:8px">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:14px; padding:0 8px">
+          <div style="font-family:'Playfair Display',serif; font-style:italic; font-size:22px; color:#a66a6e">Ladies</div>
+          <div style="display:flex; gap:8px">
+            <span data-swatch="1" style="width:30px; height:30px; border-radius:50%; background:#a66a6e; box-shadow:0 3px 8px rgba(166,106,110,.3)"></span>
+            <span data-swatch="2" style="width:30px; height:30px; border-radius:50%; background:#e8cfd0; box-shadow:0 3px 8px rgba(166,106,110,.18)"></span>
+            <span data-swatch="3" style="width:30px; height:30px; border-radius:50%; background:#e8dcc5; box-shadow:0 3px 8px rgba(166,106,110,.18)"></span>
+          </div>
+          <div style="font-size:15px; font-style:italic; color:#564d44; line-height:1.5">Midi dress or<br>an elegant two-piece</div>
+        </div>
+        <div style="width:1px; background:linear-gradient(180deg,transparent,rgba(200,148,152,.4),transparent)"></div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:14px; padding:0 8px">
+          <div style="font-family:'Playfair Display',serif; font-style:italic; font-size:22px; color:#5a6b4d">Gentlemen</div>
+          <div style="display:flex; gap:8px">
+            <span data-swatch="4" style="width:30px; height:30px; border-radius:50%; background:#5a6b4d; box-shadow:0 3px 8px rgba(90,107,77,.3)"></span>
+            <span data-swatch="5" style="width:30px; height:30px; border-radius:50%; background:#8a9a7b; box-shadow:0 3px 8px rgba(138,154,123,.22)"></span>
+            <span data-swatch="6" style="width:30px; height:30px; border-radius:50%; background:#e8dcc5; box-shadow:0 3px 8px rgba(166,106,110,.18)"></span>
+          </div>
+          <div style="font-size:15px; font-style:italic; color:#564d44; line-height:1.5">Smart casual,<br>linen suits encouraged</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-top:30px">
+        <span style="display:block; width:46px; height:1px; background:linear-gradient(90deg,transparent,#c89498)"></span>
+        <svg viewBox="0 0 24 22" width="16" height="15" fill="#c89498" aria-hidden="true"><path d="M12 21C6 16 2 12 2 7.5 2 4.4 4.4 2 7.5 2 9.6 2 11.3 3.2 12 5c.7-1.8 2.4-3 4.5-3C19.6 2 22 4.4 22 7.5 22 12 18 16 12 21z"></path></svg>
+        <span style="display:block; width:46px; height:1px; background:linear-gradient(270deg,transparent,#c89498)"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACCOMMODATION ============ -->
+  <section data-screen-label="Accommodation" style="padding:8px 22px 70px">
+    <div data-reveal="up" style="text-align:center; margin-bottom:14px">
+      <h2 style="font-family:'Playfair Display',serif; font-style:italic; font-weight:500; font-size:clamp(34px,9vw,50px); color:#2a2420; margin:0 0 8px">Accommodation</h2>
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.36em; color:#a66a6e; font-weight:500">WHERE TO STAY</div>
+    </div>
+    <p data-reveal="up" style="text-align:center; font-style:italic; font-size:17px; color:#564d44; line-height:1.7; margin:0 auto 28px; max-width:430px">We have reserved rooms at two charming hotels nearby. Please mention our wedding when booking.</p>
+    <div data-reveal="up" style="display:flex; flex-direction:column; gap:16px; max-width:520px; margin:0 auto">
+      <div style="background:#fffdfb; border:1px solid rgba(200,148,152,.22); border-radius:8px; padding:24px 24px; box-shadow:0 14px 40px rgba(166,106,110,.08)">
+        <div style="font-family:'Playfair Display',serif; font-style:italic; font-size:23px; color:#2a2420; margin-bottom:4px">The Kensington Hotel</div>
+        <div style="font-size:15px; font-style:italic; color:#9c9388; margin-bottom:10px">109–113 Queen's Gate · 0.4 mi from venue</div>
+        <div style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:.12em; color:#a66a6e; margin-bottom:18px">£220 – £450 <span style="color:#9c9388; font-size:10px">/ NIGHT</span></div>
+        <div style="display:flex; gap:10px">
+          <a href="https://maps.google.com/?q=The+Kensington+Hotel+London" target="_blank" style="flex:1; text-align:center; padding:11px; background:linear-gradient(135deg,#c89498,#a66a6e); color:#fff; text-decoration:none; border-radius:999px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:.18em">MAP</a>
+          <a href="https://www.doylecollection.com/hotels/the-kensington-hotel" target="_blank" style="flex:1; text-align:center; padding:11px; background:transparent; border:1px solid rgba(200,148,152,.45); color:#a66a6e; text-decoration:none; border-radius:999px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:.18em">WEBSITE</a>
+        </div>
+      </div>
+      <div style="background:#fffdfb; border:1px solid rgba(200,148,152,.22); border-radius:8px; padding:24px 24px; box-shadow:0 14px 40px rgba(166,106,110,.08)">
+        <div style="font-family:'Playfair Display',serif; font-style:italic; font-size:23px; color:#2a2420; margin-bottom:4px">The Gore London</div>
+        <div style="font-size:15px; font-style:italic; color:#9c9388; margin-bottom:10px">190 Queen's Gate · 0.6 mi from venue</div>
+        <div style="font-family:'Cinzel',serif; font-size:12px; letter-spacing:.12em; color:#a66a6e; margin-bottom:18px">£280 – £380 <span style="color:#9c9388; font-size:10px">/ NIGHT</span></div>
+        <div style="display:flex; gap:10px">
+          <a href="https://maps.google.com/?q=The+Gore+London" target="_blank" style="flex:1; text-align:center; padding:11px; background:linear-gradient(135deg,#c89498,#a66a6e); color:#fff; text-decoration:none; border-radius:999px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:.18em">MAP</a>
+          <a href="https://www.gorehotel.com" target="_blank" style="flex:1; text-align:center; padding:11px; background:transparent; border:1px solid rgba(200,148,152,.45); color:#a66a6e; text-decoration:none; border-radius:999px; font-family:'Cinzel',serif; font-size:10px; letter-spacing:.18em">WEBSITE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLAYLIST ============ -->
+  <section data-screen-label="Playlist" style="padding:8px 22px 70px">
+    <div data-reveal="up" style="text-align:center; margin-bottom:24px">
+      <h2 style="font-family:'Playfair Display',serif; font-style:italic; font-weight:500; font-size:clamp(34px,9vw,50px); color:#2a2420; margin:0 0 8px">The Playlist</h2>
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.36em; color:#a66a6e; font-weight:500">HELP US BUILD IT</div>
+    </div>
+    <div data-reveal="up" style="max-width:520px; margin:0 auto 26px; background:linear-gradient(135deg,#e8cfd0,#c89498); border-radius:8px; padding:22px 22px; box-shadow:0 14px 40px rgba(166,106,110,.16)">
+      <div style="font-family:'Playfair Display',serif; font-style:italic; font-size:19px; color:#3a2a2b; margin-bottom:12px">Request a song</div>
+      <div style="display:flex; gap:8px">
+        <input id="eoSongInput" placeholder="Song & artist" style="flex:1; border:none; border-radius:999px; padding:12px 16px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:#2a2420; background:rgba(255,253,251,.9); outline:none"/>
+        <button id="eoSongAdd" style="border:none; border-radius:999px; padding:12px 20px; background:#2a2420; color:#fff; font-family:'Cinzel',serif; font-size:10px; letter-spacing:.18em; cursor:pointer">ADD</button>
+      </div>
+      <div id="eoSongAdded" style="display:none; font-style:italic; font-size:14px; color:#3a2a2b; margin-top:10px">Added to the list — thank you! 🌸</div>
+    </div>
+    <div data-reveal="up" style="display:flex; align-items:center; justify-content:center; gap:12px; max-width:520px; margin:0 auto 18px">
+      <span style="flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(200,148,152,.5))"></span>
+      <span style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.3em; color:#a66a6e">TOP SONGS</span>
+      <span style="flex:1; height:1px; background:linear-gradient(270deg,transparent,rgba(200,148,152,.5))"></span>
+    </div>
+    <div data-reveal="up" style="display:flex; flex-direction:column; gap:10px; max-width:520px; margin:0 auto">
+      <div style="display:flex; align-items:center; gap:14px; background:#fffdfb; border:1px solid rgba(200,148,152,.2); border-radius:8px; padding:14px 16px; box-shadow:0 8px 24px rgba(166,106,110,.06)">
+        <span style="font-family:'Italiana',serif; font-size:22px; color:#e8cfd0; width:22px; text-align:center">1</span>
+        <div style="flex:1; text-align:left">
+          <div style="font-size:18px; color:#2a2420">Perfect</div>
+          <div style="font-size:14px; font-style:italic; color:#9c9388">Ed Sheeran</div>
+        </div>
+        <button id="eoVote0" style="display:flex; align-items:center; gap:6px; border:1px solid rgba(200,148,152,.4); background:#fff; border-radius:999px; padding:7px 13px; cursor:pointer; color:#a66a6e; font-family:'Cinzel',serif; font-size:11px">
+          <svg viewBox="0 0 24 22" width="13" height="12" fill="#c89498"><path d="M12 21C6 16 2 12 2 7.5 2 4.4 4.4 2 7.5 2 9.6 2 11.3 3.2 12 5c.7-1.8 2.4-3 4.5-3C19.6 2 22 4.4 22 7.5 22 12 18 16 12 21z"></path></svg>
+          <span id="eoV0">4</span>
+        </button>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; background:#fffdfb; border:1px solid rgba(200,148,152,.2); border-radius:8px; padding:14px 16px; box-shadow:0 8px 24px rgba(166,106,110,.06)">
+        <span style="font-family:'Italiana',serif; font-size:22px; color:#e8cfd0; width:22px; text-align:center">2</span>
+        <div style="flex:1; text-align:left">
+          <div style="font-size:18px; color:#2a2420">At Last</div>
+          <div style="font-size:14px; font-style:italic; color:#9c9388">Etta James</div>
+        </div>
+        <button id="eoVote1" style="display:flex; align-items:center; gap:6px; border:1px solid rgba(200,148,152,.4); background:#fff; border-radius:999px; padding:7px 13px; cursor:pointer; color:#a66a6e; font-family:'Cinzel',serif; font-size:11px">
+          <svg viewBox="0 0 24 22" width="13" height="12" fill="#c89498"><path d="M12 21C6 16 2 12 2 7.5 2 4.4 4.4 2 7.5 2 9.6 2 11.3 3.2 12 5c.7-1.8 2.4-3 4.5-3C19.6 2 22 4.4 22 7.5 22 12 18 16 12 21z"></path></svg>
+          <span id="eoV1">3</span>
+        </button>
+      </div>
+      <div style="display:flex; align-items:center; gap:14px; background:#fffdfb; border:1px solid rgba(200,148,152,.2); border-radius:8px; padding:14px 16px; box-shadow:0 8px 24px rgba(166,106,110,.06)">
+        <span style="font-family:'Italiana',serif; font-size:22px; color:#e8cfd0; width:22px; text-align:center">3</span>
+        <div style="flex:1; text-align:left">
+          <div style="font-size:18px; color:#2a2420">Can't Help Falling in Love</div>
+          <div style="font-size:14px; font-style:italic; color:#9c9388">Elvis Presley</div>
+        </div>
+        <button id="eoVote2" style="display:flex; align-items:center; gap:6px; border:1px solid rgba(200,148,152,.4); background:#fff; border-radius:999px; padding:7px 13px; cursor:pointer; color:#a66a6e; font-family:'Cinzel',serif; font-size:11px">
+          <svg viewBox="0 0 24 22" width="13" height="12" fill="#c89498"><path d="M12 21C6 16 2 12 2 7.5 2 4.4 4.4 2 7.5 2 9.6 2 11.3 3.2 12 5c.7-1.8 2.4-3 4.5-3C19.6 2 22 4.4 22 7.5 22 12 18 16 12 21z"></path></svg>
+          <span id="eoV2">2</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section data-screen-label="RSVP" style="padding:8px 22px 78px">
+    <div data-reveal="up" style="max-width:520px; margin:0 auto; background:#fffdfb; border:1px solid rgba(200,148,152,.22); border-radius:8px; padding:44px 26px 38px; text-align:center; box-shadow:0 18px 46px rgba(166,106,110,.12)">
+      <h2 style="font-family:'Playfair Display',serif; font-style:italic; font-weight:600; font-size:clamp(40px,11vw,62px); color:#2a2420; margin:0 0 8px">RSVP</h2>
+      <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.36em; color:#a66a6e; font-weight:500; margin-bottom:14px">ARE YOU ATTENDING?</div>
+      <p style="font-style:italic; font-size:16px; color:#9c9388; margin:0 0 28px">Please respond by Tuesday, 20 July 2027</p>
+
+      <div id="eoRsvpForm" style="display:flex; flex-direction:column; gap:14px; text-align:left">
+        <input id="eoRsName" placeholder="Your name" style="border:1px solid rgba(200,148,152,.3); border-radius:4px; padding:14px 16px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:17px; color:#2a2420; background:#fff; outline:none"/>
+        <div style="display:flex; gap:10px">
+          <button id="eoAttendYes" style="flex:1;padding:13px 8px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;transition:all .25s;border:1px solid rgba(200,148,152,.35);background:#fff;color:#9c9388">Joyfully accepts</button>
+          <button id="eoAttendNo" style="flex:1;padding:13px 8px;border-radius:4px;cursor:pointer;font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;transition:all .25s;border:1px solid rgba(200,148,152,.35);background:#fff;color:#9c9388">Regretfully declines</button>
+        </div>
+        <div id="eoGuestRow" style="display:none; align-items:center; justify-content:space-between; border:1px solid rgba(200,148,152,.3); border-radius:4px; padding:10px 16px; background:#fff">
+          <span style="font-style:italic; font-size:16px; color:#564d44">Number in your party</span>
+          <div style="display:flex; align-items:center; gap:14px">
+            <button id="eoGuestsMinus" style="width:30px; height:30px; border-radius:50%; border:1px solid rgba(200,148,152,.4); background:#fffdfb; color:#a66a6e; font-size:18px; cursor:pointer; line-height:1">–</button>
+            <span id="eoRsGuests" style="font-family:'Italiana',serif; font-size:22px; color:#2a2420; min-width:20px; text-align:center">2</span>
+            <button id="eoGuestsPlus" style="width:30px; height:30px; border-radius:50%; border:1px solid rgba(200,148,152,.4); background:#fffdfb; color:#a66a6e; font-size:18px; cursor:pointer; line-height:1">+</button>
+          </div>
+        </div>
+        <textarea id="eoRsMsg" placeholder="A note for the couple (optional)" rows="3" style="border:1px solid rgba(200,148,152,.3); border-radius:4px; padding:14px 16px; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; color:#2a2420; background:#fff; outline:none; resize:none"></textarea>
+        <button id="eoSubmitRsvp" style="margin-top:4px; border:none; border-radius:999px; padding:16px; background:linear-gradient(135deg,#c89498,#a66a6e); color:#fff; font-family:'Cinzel',serif; font-size:11px; letter-spacing:.24em; cursor:pointer; box-shadow:0 10px 26px rgba(166,106,110,.3)">SEND RSVP</button>
+      </div>
+      <div id="eoRsvpSent" style="display:none; padding:10px 0 6px">
+        <svg viewBox="0 0 24 22" width="34" height="31" fill="#c89498" style="margin-bottom:14px"><path d="M12 21C6 16 2 12 2 7.5 2 4.4 4.4 2 7.5 2 9.6 2 11.3 3.2 12 5c.7-1.8 2.4-3 4.5-3C19.6 2 22 4.4 22 7.5 22 12 18 16 12 21z"></path></svg>
+        <p id="eoThankYou" style="font-family:'Playfair Display',serif; font-style:italic; font-size:21px; color:#2a2420; line-height:1.5; margin:0"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer data-screen-label="Footer" style="padding:30px 24px 64px; text-align:center; border-top:1px solid rgba(200,148,152,.2)">
+    <div style="font-family:'Italiana',serif; font-size:clamp(30px,9vw,44px); color:#2a2420; margin-bottom:6px">Emma <span style="font-family:'Playfair Display',serif; font-style:italic; color:#a66a6e">&amp;</span> Oliver</div>
+    <p style="font-style:italic; font-size:16px; color:#564d44; margin:0 0 18px">With love and gratitude — we can't wait to celebrate with you.</p>
+    <div style="font-family:'Cinzel',serif; font-size:9px; letter-spacing:.34em; color:#9c9388">INVITATION BY <span style="color:#a66a6e">DIGIWED</span></div>
+  </footer>
+</div>
+
+<!-- ============ MUSIC TOGGLE BUTTON ============ -->
+<button id="eoMusicBtn" aria-label="Toggle music" style="position:fixed; bottom:20px; right:20px; z-index:40; width:48px; height:48px; border-radius:50%; border:1px solid rgba(200,148,152,.45); background:#fffdfb; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px rgba(166,106,110,.22)">
+  <span id="eoMusicPulse" style="display:none; position:absolute; inset:0; border-radius:50%; border:1px solid #c89498; animation:eoPulse 1.7s ease-out infinite"></span>
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#a66a6e" stroke-width="1.6"><circle cx="6.5" cy="17" r="2.6"></circle><circle cx="17.5" cy="15" r="2.6"></circle><path d="M9.1 17V5l11-1.6V15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+
+<!-- BGM: replace with the Cloudinary /video/upload MP3 URL (48k, f_auto,q_auto) -->
+<audio id="bgm" loop preload="none" src="https://res.cloudinary.com/dormnrhdf/video/upload/BGM-PLACEHOLDER.mp3"></audio>
+
+<!-- ============ TOAST (DigiWed standard, rose palette) ============ -->
+<div id="toast" style="position:fixed;left:50%;bottom:84px;transform:translateX(-50%) translateY(80px);
+  background:rgba(58,42,43,.96);color:#fdf2f3;padding:12px 22px;border-radius:30px;
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;letter-spacing:.3px;z-index:3000;
+  opacity:0;transition:all .35s ease;pointer-events:none;max-width:86vw;text-align:center;box-shadow:0 10px 30px rgba(166,106,110,.3);"></div>
+
+<!-- ============ MAIN VANILLA SCRIPT (all interactive behaviors) ============ -->
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Firebase init (guarded; page still works visually if it fails) ---------- */
+  var db = null;
+  try {
+    if (typeof firebase !== 'undefined') {
+      firebase.initializeApp({
+        databaseURL: "https://yaseen-jumana-wedding-default-rtdb.firebaseio.com",
+        projectId: "yaseen-jumana-wedding"
+      });
+      db = firebase.database();
+      window.db = db;
+    }
+  } catch (e) { db = null; }
+
+  /* ---------- Toast (no alert) ---------- */
+  var toastTimer = null;
+  function toast(msg, isErr){
+    var t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.style.background = isErr ? 'rgba(140,50,55,.96)' : 'rgba(58,42,43,.96)';
+    t.style.opacity = '1';
+    t.style.transform = 'translateX(-50%) translateY(0)';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      t.style.opacity = '0';
+      t.style.transform = 'translateX(-50%) translateY(80px)';
+    }, 3000);
+  }
+
+  /* ================= ENTRANCE FX (lifted faithfully from initFx) ================= */
+  var reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var obs = null;
+  function initFx(){
+    if (reduced) {
+      // ensure resting visible state for everything
+      document.querySelectorAll('[data-fx],[data-reveal]').forEach(function(el){
+        el.style.opacity = '1'; el.style.transform = 'none';
+      });
+      return;
+    }
+    var easing = 'cubic-bezier(.22,.75,.25,1)';
+    // Hero entrance: fade + slide, driven by setTimeout (wall-clock)
+    document.querySelectorAll('[data-fx]').forEach(function(el){
+      var delay = parseFloat(el.getAttribute('data-fx-delay') || '0');
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity .95s ' + easing + ', transform .95s ' + easing;
+      setTimeout(function(){ el.style.opacity = '1'; el.style.transform = 'none'; }, delay + 60);
+      setTimeout(function(){ el.style.transition = 'none'; el.style.opacity = '1'; el.style.transform = 'none'; }, delay + 1500);
+    });
+    // dress-code colour swatches: continuous gentle float + pulse, staggered
+    document.querySelectorAll('[data-swatch]').forEach(function(el, i){
+      if (!el.animate) return;
+      el.animate([
+        { transform: 'translateY(0) scale(1)' },
+        { transform: 'translateY(-6px) scale(1.1)' },
+        { transform: 'translateY(0) scale(1)' }
+      ], { duration: 2400 + i * 170, delay: i * 150, iterations: Infinity, easing: 'ease-in-out' });
+    });
+    // drifting petals
+    document.querySelectorAll('[data-drift]').forEach(function(el, i){
+      if (!el.animate) return;
+      var sec = el.closest('section');
+      var h = (sec ? sec.offsetHeight : window.innerHeight) + 100;
+      var wob = (i % 2 === 0 ? 1 : -1) * (36 + i * 12);
+      el.animate([
+        { transform: 'translate(0,0) rotate(0deg)' },
+        { transform: 'translate(' + wob + 'px,' + h * 0.55 + 'px) rotate(170deg)' },
+        { transform: 'translate(' + (-wob * 0.4) + 'px,' + h + 'px) rotate(340deg)' }
+      ], { duration: 13000 + i * 2400, delay: -(i * 2900), iterations: Infinity, easing: 'linear' });
+    });
+    // Scroll reveals: fade + slide-up via IntersectionObserver
+    var revEls = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+    revEls.forEach(function(el){
+      if (el.getBoundingClientRect().top > window.innerHeight * 0.9) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity .9s ' + easing + ', transform .9s ' + easing;
+      }
+    });
+    obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var el = en.target; obs.unobserve(el);
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        setTimeout(function(){ el.style.transition = 'none'; el.style.opacity = '1'; el.style.transform = 'none'; }, 1300);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    revEls.forEach(function(el){ obs.observe(el); });
+  }
+
+  /* ================= COUNTDOWN / COUNT-UP ================= */
+  var TARGET = new Date('2027-06-14T15:00:00').getTime();
+  var cdHeadingFlipped = false;
+  function pad2(n){ return String(n).padStart(2, '0'); }
+  function updateCountdown(){
+    var now = Date.now();
+    var diff = TARGET - now;
+    var past = diff <= 0;
+    var d = Math.abs(diff);
+    var days = Math.floor(d / 86400000);
+    var hours = Math.floor(d / 3600000) % 24;
+    var mins = Math.floor(d / 60000) % 60;
+    var elD = document.getElementById('cdDays');
+    var elH = document.getElementById('cdHours');
+    var elM = document.getElementById('cdMins');
+    if (elD) elD.textContent = String(days);
+    if (elH) elH.textContent = pad2(hours);
+    if (elM) elM.textContent = pad2(mins);
+    if (past && !cdHeadingFlipped) {
+      cdHeadingFlipped = true;
+      var head = document.getElementById('cdHeading');
+      if (head) head.textContent = 'TOGETHER FOR';
+    }
+  }
+
+  /* ================= GALLERY ================= */
+  var gi = 0;
+  var GAL_TOTAL = 4;
+  var layouts = [
+    { t: 'translate(0,0) rotate(-3deg) scale(1)', z: 40 },
+    { t: 'translate(10px,9px) rotate(3deg) scale(.95)', z: 30 },
+    { t: 'translate(-9px,18px) rotate(-2deg) scale(.91)', z: 20 },
+    { t: 'translate(7px,26px) rotate(4deg) scale(.87)', z: 10 }
+  ];
+  function cardStyle(i){
+    var L = layouts[(i - gi + GAL_TOTAL) % GAL_TOTAL];
+    return 'position:absolute;top:0;left:0;width:100%;height:100%;transform-origin:center bottom;transform:' + L.t + ';z-index:' + L.z + ';transition:transform .55s cubic-bezier(.2,.7,.25,1)';
+  }
+  function dotStyle(i){
+    // 8px dot kept pixel-identical, but the tappable box is 24px for mobile (negative margin preserves spacing)
+    var col = (i === gi ? '#a66a6e' : 'rgba(200,148,152,.35)');
+    return 'display:inline-block;box-sizing:border-box;width:24px;height:24px;margin:0 -4px;cursor:pointer;background-image:radial-gradient(circle at center,' + col + ' 0 4px,rgba(0,0,0,0) 4px);background-repeat:no-repeat';
+  }
+  function renderGallery(){
+    for (var i = 0; i < GAL_TOTAL; i++){
+      var card = document.getElementById('eoCard' + i);
+      if (card) card.setAttribute('style', cardStyle(i));
+      var dot = document.getElementById('eoDot' + i);
+      if (dot) dot.setAttribute('style', dotStyle(i));
+    }
+    var counter = document.getElementById('eoGalCounter');
+    if (counter) counter.textContent = (gi + 1) + ' / ' + GAL_TOTAL;
+  }
+  function galNext(){ gi = (gi + 1) % GAL_TOTAL; renderGallery(); }
+  function galPrev(){ gi = (gi + GAL_TOTAL - 1) % GAL_TOTAL; renderGallery(); }
+  function galGo(i){ gi = i; renderGallery(); }
+
+  /* ================= PLAYLIST ================= */
+  var SONG_PATH = 'emma-oliver-v1/song-requests';
+  var VOTE_PATH = 'emma-oliver-v1/playlist-votes';
+  var SONG_IDS = ['perfect', 'atlast', 'cantHelp'];
+  var DEFAULT_VOTES = [4, 3, 2];
+
+  function addSong(){
+    var input = document.getElementById('eoSongInput');
+    var added = document.getElementById('eoSongAdded');
+    var btn = document.getElementById('eoSongAdd');
+    var val = (input.value || '').trim();
+    if (!val) return;
+    btn.disabled = true; btn.style.opacity = '.5';
+    function finishOk(){
+      btn.disabled = false; btn.style.opacity = '';
+      input.value = '';
+      if (added) added.style.display = 'block';
+    }
+    if (db) {
+      try {
+        db.ref(SONG_PATH).push({ song: val, ts: Date.now() }, function(err){
+          if (err) {
+            btn.disabled = false; btn.style.opacity = '';
+            toast('Could not send — check connection and tap again.', true); // input preserved
+            return;
+          }
+          finishOk();
+        });
+      } catch (e) {
+        btn.disabled = false; btn.style.opacity = '';
+        toast('Could not send — check connection and tap again.', true);
+      }
+    } else {
+      // no Firebase: still confirm visually
+      finishOk();
+    }
+  }
+
+  function setupVotes(){
+    for (var i = 0; i < SONG_IDS.length; i++){
+      (function(i){
+        var sid = SONG_IDS[i];
+        var btn = document.getElementById('eoVote' + i);
+        var countEl = document.getElementById('eoV' + i);
+        // mark already-voted visually
+        if (localStorage.getItem('voted_' + sid)) {
+          if (btn) btn.style.opacity = '.7';
+        }
+        // live count
+        if (db) {
+          try {
+            db.ref(VOTE_PATH + '/' + sid).on('value', function(snap){
+              var n = snap.val();
+              if (n == null) n = DEFAULT_VOTES[i];
+              if (countEl) countEl.textContent = String(n);
+            });
+          } catch (e) {}
+        }
+        if (btn) {
+          btn.addEventListener('click', function(){
+            if (localStorage.getItem('voted_' + sid)) {
+              toast('You’ve already voted for this one 🌸');
+              return;
+            }
+            localStorage.setItem('voted_' + sid, '1');
+            btn.style.opacity = '.7';
+            if (db) {
+              try {
+                db.ref(VOTE_PATH + '/' + sid).transaction(function(n){
+                  return (n || DEFAULT_VOTES[i]) + 1;
+                });
+              } catch (e) {}
+            } else {
+              // local fallback increment
+              if (countEl) countEl.textContent = String((parseInt(countEl.textContent, 10) || DEFAULT_VOTES[i]) + 1);
+            }
+          });
+        }
+      })(i);
+    }
+  }
+
+  /* ================= RSVP ================= */
+  var RSVP_PATH = 'emma-oliver/rsvp';
+  var rsAtt = null;
+  var rsGuests = 2;
+  function attBtnStyle(active, accent){
+    var base = 'flex:1;padding:13px 8px;border-radius:4px;cursor:pointer;font-family:\'Cinzel\',serif;font-size:10px;letter-spacing:.12em;transition:all .25s;';
+    return base + (active
+      ? 'border:1px solid ' + accent + ';background:' + accent + ';color:#fff'
+      : 'border:1px solid rgba(200,148,152,.35);background:#fff;color:#9c9388');
+  }
+  function renderRsvpButtons(){
+    var yes = document.getElementById('eoAttendYes');
+    var no = document.getElementById('eoAttendNo');
+    if (yes) yes.setAttribute('style', attBtnStyle(rsAtt === 'yes', '#8a9a7b'));
+    if (no) no.setAttribute('style', attBtnStyle(rsAtt === 'no', '#a66a6e'));
+    var guestRow = document.getElementById('eoGuestRow');
+    if (guestRow) guestRow.style.display = (rsAtt === 'yes') ? 'flex' : 'none';
+  }
+  function submitRsvp(){
+    var nameEl = document.getElementById('eoRsName');
+    var msgEl = document.getElementById('eoRsMsg');
+    var name = (nameEl.value || '').trim();
+    var msg = (msgEl.value || '').trim();
+    if (!name || !rsAtt) {
+      toast('Please enter your name and choose a response.', true);
+      return;
+    }
+    var btn = document.getElementById('eoSubmitRsvp');
+    btn.disabled = true; btn.style.opacity = '.5';
+
+    var thankYou = (rsAtt === 'no')
+      ? 'Thank you, ' + (name || 'friend') + '. You’ll be missed — but your blessings mean the world.'
+      : 'Thank you, ' + (name || 'friend') + '. We can’t wait to celebrate with you!';
+
+    function showSent(){
+      var form = document.getElementById('eoRsvpForm');
+      var sent = document.getElementById('eoRsvpSent');
+      var ty = document.getElementById('eoThankYou');
+      if (ty) ty.textContent = thankYou; // textContent — never innerHTML
+      if (form) form.style.display = 'none';
+      if (sent) sent.style.display = 'block';
+    }
+
+    var payload = {
+      name: name,
+      attending: rsAtt,
+      guests: (rsAtt === 'yes') ? rsGuests : 0,
+      msg: msg,
+      ts: Date.now()
+    };
+
+    if (db) {
+      try {
+        db.ref(RSVP_PATH).push(payload, function(err){
+          if (err) {
+            btn.disabled = false; btn.style.opacity = '';
+            toast('Could not send — check connection and tap again.', true); // inputs preserved
+            return;
+          }
+          showSent();
+        });
+      } catch (e) {
+        btn.disabled = false; btn.style.opacity = '';
+        toast('Could not send — check connection and tap again.', true);
+      }
+    } else {
+      // no Firebase: still confirm visually
+      showSent();
+    }
+  }
+
+  /* ================= MUSIC ================= */
+  var musicOn = false;
+  function toggleMusic(){
+    var bgm = document.getElementById('bgm');
+    var pulse = document.getElementById('eoMusicPulse');
+    if (!bgm) return;
+    if (musicOn) {
+      bgm.pause();
+      musicOn = false;
+      if (pulse) pulse.style.display = 'none';
+    } else {
+      var p = bgm.play();
+      if (p && p.catch) { p.catch(function(){}); }
+      musicOn = true;
+      if (pulse) pulse.style.display = 'block';
+    }
+  }
+
+  /* ================= WIRE EVERYTHING ON DOM READY ================= */
+  function init(){
+    initFx();
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    renderGallery();
+    var stack = document.getElementById('eoGalStack');
+    if (stack) stack.addEventListener('click', galNext);
+    var pn = document.getElementById('eoGalNext');
+    var pp = document.getElementById('eoGalPrev');
+    if (pn) pn.addEventListener('click', function(e){ e.stopPropagation(); galNext(); });
+    if (pp) pp.addEventListener('click', function(e){ e.stopPropagation(); galPrev(); });
+    for (var i = 0; i < GAL_TOTAL; i++){
+      (function(i){
+        var dot = document.getElementById('eoDot' + i);
+        if (dot) dot.addEventListener('click', function(e){ e.stopPropagation(); galGo(i); });
+      })(i);
+    }
+
+    // Playlist
+    var songInput = document.getElementById('eoSongInput');
+    var songAddBtn = document.getElementById('eoSongAdd');
+    var songAdded = document.getElementById('eoSongAdded');
+    if (songInput && songAdded) songInput.addEventListener('input', function(){ songAdded.style.display = 'none'; });
+    if (songAddBtn) songAddBtn.addEventListener('click', addSong);
+    if (songInput) songInput.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); addSong(); } });
+    setupVotes();
+
+    // RSVP
+    renderRsvpButtons();
+    var yes = document.getElementById('eoAttendYes');
+    var no = document.getElementById('eoAttendNo');
+    if (yes) yes.addEventListener('click', function(){ rsAtt = 'yes'; renderRsvpButtons(); });
+    if (no) no.addEventListener('click', function(){ rsAtt = 'no'; renderRsvpButtons(); });
+    var gMinus = document.getElementById('eoGuestsMinus');
+    var gPlus = document.getElementById('eoGuestsPlus');
+    var gVal = document.getElementById('eoRsGuests');
+    if (gMinus) gMinus.addEventListener('click', function(){ rsGuests = Math.max(1, rsGuests - 1); if (gVal) gVal.textContent = String(rsGuests); });
+    if (gPlus) gPlus.addEventListener('click', function(){ rsGuests = Math.min(12, rsGuests + 1); if (gVal) gVal.textContent = String(rsGuests); });
+    var submitBtn = document.getElementById('eoSubmitRsvp');
+    if (submitBtn) submitBtn.addEventListener('click', submitRsvp);
+
+    // Music
+    var musicBtn = document.getElementById('eoMusicBtn');
+    if (musicBtn) musicBtn.addEventListener('click', toggleMusic);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+<!-- ============ LANDING / INTRO VIDEO (tap to open · plays once · white-light reveal) ============ -->
+<div id="eoLanding" role="button" tabindex="0" aria-label="Tap to open the invitation"
+     style="position:fixed; inset:0; z-index:9999; background:#fdf2f3; overflow:hidden; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:opacity 1.1s ease;">
+
+  <!-- intro film: plays a single time, then fires the white-light reveal -->
+  <video id="eoIntroVideo" playsinline webkit-playsinline preload="auto" muted
+         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:#1a1416; display:block;">
+    <source src="https://res.cloudinary.com/dormnrhdf/video/upload/Emma-Oliver-intro_k0cp0s.mp4" type="video/mp4">
+  </video>
+
+  <!-- transparent prompt over the still video frame (fades away the moment the film starts) -->
+  <div id="eoTapCard"
+       style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:44px 28px;
+              background:transparent; text-shadow:0 2px 20px rgba(255,253,251,.7), 0 1px 4px rgba(42,36,32,.4); transition:opacity .8s ease;">
+    <div style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.42em; color:#a66a6e; font-weight:500; margin-bottom:22px">TOGETHER WITH THEIR FAMILIES</div>
+    <div style="font-family:'Italiana',serif; font-size:clamp(46px,15vw,92px); line-height:1; color:#2a2420">Emma <span style="font-family:'Playfair Display',serif; font-style:italic; color:#a66a6e; font-size:.56em; vertical-align:.08em">&amp;</span> Oliver</div>
+    <div style="font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(17px,4.6vw,22px); color:#564d44; margin:18px 0 38px">request the pleasure of your company</div>
+
+    <div style="position:relative; width:74px; height:74px; display:flex; align-items:center; justify-content:center; margin-bottom:16px">
+      <span style="position:absolute; inset:0; border-radius:50%; border:1px solid #c89498; animation:eoPulse 1.9s ease-out infinite"></span>
+      <span style="position:absolute; inset:0; border-radius:50%; border:1px solid rgba(200,148,152,.5)"></span>
+      <svg viewBox="0 0 24 22" width="26" height="24" fill="#a66a6e" aria-hidden="true"><path d="M12 21C6 16 2 12 2 7.5 2 4.4 4.4 2 7.5 2 9.6 2 11.3 3.2 12 5c.7-1.8 2.4-3 4.5-3C19.6 2 22 4.4 22 7.5 22 12 18 16 12 21z"></path></svg>
+    </div>
+    <div style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:.34em; color:#a66a6e">TAP TO OPEN</div>
+  </div>
+
+  <!-- the bright white light that blooms when the film ends -->
+  <div id="eoFlash" style="position:absolute; inset:0; background:radial-gradient(circle at 50% 46%, #ffffff, #ffffff 55%, #fff7f7 100%); opacity:0; pointer-events:none; transition:opacity .5s ease;"></div>
+</div>
+
+<script>
+(function(){
+  var landing = document.getElementById('eoLanding');
+  var card    = document.getElementById('eoTapCard');
+  var video   = document.getElementById('eoIntroVideo');
+  var flash   = document.getElementById('eoFlash');
+  if(!landing || !video) return;
+
+  var opened = false, revealed = false, watchdog = null, guardMax = null;
+  var htmlEl = document.documentElement;
+  var prevHtml = htmlEl.style.overflow, prevBody = document.body.style.overflow;
+
+  // hold the guest on the landing — no scrolling underneath until the film is done
+  htmlEl.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
+
+  function reveal(){
+    if(revealed) return; revealed = true;
+    if(watchdog){ clearInterval(watchdog); watchdog = null; }
+    if(guardMax){ clearTimeout(guardMax); guardMax = null; }
+    // 1) bright white light blooms over the final frame
+    if(flash) flash.style.opacity = '1';
+    // 2) then the whole landing dissolves out of the light, unveiling the invitation
+    setTimeout(function(){
+      landing.style.opacity = '0';
+      htmlEl.style.overflow = prevHtml;
+      document.body.style.overflow = prevBody;
+      window.scrollTo(0, 0);
+      setTimeout(function(){ if(landing.parentNode) landing.parentNode.removeChild(landing); }, 1150);
+    }, 620);
+  }
+
+  function openInvite(){
+    if(opened) return; opened = true;
+    if(card){ card.style.opacity = '0'; card.style.pointerEvents = 'none'; }
+    try { video.currentTime = 0; } catch(e){}
+    video.muted = false;            // tap is a user gesture → sound is allowed
+    if(video.error){ reveal(); return; }   // film already failed to load → go straight in
+    // watchdog: never leave the guest frozen if the film stalls or never fires 'ended'
+    var last = -1, stalls = 0;
+    watchdog = setInterval(function(){
+      if(revealed){ clearInterval(watchdog); watchdog = null; return; }
+      if(video.ended){ reveal(); return; }
+      var t = video.currentTime || 0;
+      if(t > last + 0.05){ last = t; stalls = 0; }    // film is progressing
+      else { stalls++; if(stalls >= 6){ reveal(); } } // ~6s with no progress → bail out
+    }, 1000);
+    guardMax = setTimeout(reveal, 45000);   // absolute backstop
+    var p = video.play();
+    if(p && p.catch){
+      p.catch(function(){           // sound blocked → retry silently; if even that fails, just go in
+        video.muted = true;
+        var p2 = video.play();
+        if(p2 && p2.catch){ p2.catch(reveal); }
+      });
+    }
+  }
+
+  // plays once (no loop attribute) → 'ended' triggers the white-light reveal
+  video.addEventListener('ended', reveal);
+  // if the film can't load after a tap, take the guest straight to the invitation
+  video.addEventListener('error', function(){ if(opened){ reveal(); } });
+
+  landing.addEventListener('click', openInvite);
+  landing.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openInvite(); } });
+})();
+</script>
+</body>
+</html>
